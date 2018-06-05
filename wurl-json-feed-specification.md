@@ -201,6 +201,9 @@ Series Object Example (seasons):
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "description": "A series description",
   "shortDescription": "Wondrous series seasons.",
+  "groups": {
+    ...
+  },
   "tags": {
       "genres": [
         "genre 1",
@@ -241,6 +244,9 @@ Series Object Example (mini-series):
   "episodes": [
     ...
   ],
+  "groups": [
+    ...
+  ],
   "genres": [
     "fashion",
     "romance",
@@ -278,6 +284,7 @@ This object represents a single season of a series.
 | episodes | [Episode Object](#episode) | Required | One or more episodes of this particular season.
 | seasonTitle | string | Optional | The season title.
 | thumbnail | [Thumbnail Object](#thumbnail) | Optional | One or more thumbnails for the movie.
+| groups | [Group Object](#group) | Optional | An array of groups (episodes grouped together).
 
 Season Object Example:
 
@@ -286,6 +293,9 @@ Season Object Example:
   "seasonNumber": "1",
   "seasonTitle": "Go forward!",
   "episodes": [
+    ...
+  ],
+  "groups": [
     ...
   ]
 }
@@ -808,10 +818,8 @@ Tag Object Example:
 ## group
 Child object of property:
 
-* `movie`
+* `season`
 * `series`
-* `shortFormVideo`
-* `tvSpecial`
 
 This object represents an episode grouping.
 
