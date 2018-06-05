@@ -95,7 +95,8 @@ This object represents a movie object.
 | genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | thumbnail | string | Required | The URL of the thumbnail for the movie. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | releaseDate | string | Required | The date the movie was initially released or first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Required | A movie description that does not exceed 200 characters. The text will be clipped if longer.
+| description | string | Required | The movie description.
+| shortDescription | string | Optional | A movie description that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc.). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the movie.
@@ -118,6 +119,7 @@ Movie Object Example:
     ],
     "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
     "releaseDate": "2016-01-01",
+    "description": "Incredible movie description probably is longer than shortDescription",
     "shortDescription": "Incredible movie description",
     "longDescription": "Even more incredible and longer movie description",
     "tags": [
@@ -147,7 +149,8 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | genres | string | Required | The genre(s) of the series. Must be one of the values listed in [Genres](#genres).
 | thumbnail | string | Required | The URL of the thumbnail for the series. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | releaseDate | string | Required | The date the series first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Required | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
+| description | string | Required | A description of the series.
+| shortDescription | string | Optional | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc.). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
@@ -170,6 +173,7 @@ Series Object Example (seasons):
     "thriller",
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
+  "description": "A series description",
   "shortDescription": "Wondrous series seasons."
 }
 ```
@@ -189,6 +193,7 @@ Series Object Example (mini-series):
     "technology",
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
+  "description": "A description",
   "shortDescription": "Unbelievables series episodes."
 }
 ```
@@ -235,7 +240,8 @@ This object represents a single episode in a series or a season.
 | thumbnail | string | Required | The URL of the thumbnail for the episode. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | episodeNumber | integer | Required | The sequential episode number. E.g.: 3.
 | releaseDate | string | Required | The date the episode first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Required | An episode description that does not exceed 200 characters. The text will be clipped if longer.
+| description | string | Required | An episode description.
+| shortDescription | string | Optional | An episode description that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the episode.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
@@ -252,7 +258,9 @@ Episode Object Example:
   },
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "episodeNumber": 1,
+  "Description": "Marvelous episode description that is a little longer than shortDescription",
   "shortDescription": "Marvelous episode description"
+
 }
 ```
 
@@ -269,7 +277,8 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | title | string | Required | Video title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnail | string | Required | The URL of the thumbnail for the video. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
-| shortDescription | string | Required | A description of the video that does not exceed 200 characters. The text will be clipped if longer.
+| description | string | Required | A description of the video.
+| shortDescription | string | Optional | A description of the video that does not exceed 200 characters. The text will be clipped if longer.
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | longDescription | string | Optional | A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
