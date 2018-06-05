@@ -231,6 +231,7 @@ This object represents a single season of a series.
 | ----- | ---- | -------- | ----------- |
 | seasonNumber | integer | Required | Sequential season number. E.g.: 3 or 2015.
 | episodes | [Episode Object](#episode) | Required | One or more episodes of this particular season.
+| seasonTitle | string | Optional | The season title.
 | thumbnail | string | Optional | The URL of the thumbnail for the season. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 
 Season Object Example:
@@ -238,6 +239,7 @@ Season Object Example:
 ```json
 {
   "seasonNumber": "1",
+  "seasonTitle": "Go forward!",
   "episodes": [
     ...
   ]
