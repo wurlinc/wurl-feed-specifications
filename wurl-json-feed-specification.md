@@ -98,7 +98,7 @@ This object represents a movie object.
 | description | string | Required | The movie description.
 | shortDescription | string | Optional | A movie description that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
-| tags | [Tag Object](#tag) | Optional | One or more tag objects.
+| tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the movie.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
@@ -122,12 +122,20 @@ Movie Object Example:
     "description": "Incredible movie description probably is longer than shortDescription",
     "shortDescription": "Incredible movie description",
     "longDescription": "Even more incredible and longer movie description",
-    "tags": [
-        "amazing",
-        "drama",
-        "comedy",
-        "horror"
-    ]
+    "tags": {
+      "genres": [
+        "genre 1",
+        "genre 2"
+      ],
+      "keywords": [
+        "keyword 1",
+        "keyword 2"
+      ],
+      "categories": [
+        "category 1",
+        "category 2"
+      ]
+    }
 }
 ```
 
@@ -152,7 +160,7 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | description | string | Required | A description of the series.
 | shortDescription | string | Optional | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
-| tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc.). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
+| tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
 
@@ -174,7 +182,21 @@ Series Object Example (seasons):
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "description": "A series description",
-  "shortDescription": "Wondrous series seasons."
+  "shortDescription": "Wondrous series seasons.",
+  "tags": {
+      "genres": [
+        "genre 1",
+        "genre 2"
+      ],
+      "keywords": [
+        "keyword 1",
+        "keyword 2"
+      ],
+      "categories": [
+        "category 1",
+        "category 2"
+      ]
+    }
 }
 ```
 
