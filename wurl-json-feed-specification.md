@@ -55,7 +55,7 @@ These are the properties for the root object of your feed. It contains basic inf
 
 > :information_source: *At least one of these content types is required
 
-Direct Publisher Feed Root Object Example:
+Feed Root Object Example:
 
 ```json
 {
@@ -336,7 +336,7 @@ TV Special Object Example:
 ## category
 Child object of root property `categories`.
 
-The category object defines a new category your channel will display, and the content included in it based either on a playlist (see object description below), or a query containing one or multiple tags. You can also create them directly in Direct Publisher.
+The category object defines a new category your channel will display, and the content included in it based either on a playlist (see object description below), or a query containing one or multiple tags.
 
 There are three default categories in every channel: "Continue Watching", "Most Popular", and "Recently Added".
 
@@ -416,10 +416,10 @@ This object represents the details about a single video content of a movie, epis
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
 | dateAdded | string | Required | The date the video was added to the library in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00 This information is used to generate the “Recently Added” category.
-| videos | [Video Object](#video) | Required | One or more video files. For non-adaptive streams, you can specify the same video with different qualities so the Roku player can choose the best one based on bandwidth.
+| videos | [Video Object](#video) | Required | One or more video files. For non-adaptive streams, you can specify the same video with different qualities.
 | duration | integer | Required | Runtime in seconds.
-| captions | [Caption Object](#caption) | Optional | Supported formats are described in [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
-| trickPlayFiles | [Trickplay File Object](#trickplayfile) | Optional | The trickplay file(s) that displays images as a user scrubs through a video, in Roku’s BIF format. Trickplay files in multiple qualities can be provided.
+| captions | [Caption Object](#caption) | Optional
+| trickPlayFiles | [Trickplay File Object](#trickplayfile) | Optional | The trickplay file(s) that displays images as a user scrubs through a video. Trickplay files in multiple qualities can be provided.
 | language | string | Optional | The language in which the video was originally produced (e.g., “en”, “en-US”, “es”, etc). ISO 639 alpha-2 or alpha-3 language code string.
 | validityPeriodStart | string | Optional | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 | validityPeriodEnd | string | Optional | The date when the content is no longer available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
@@ -449,7 +449,7 @@ This object represents the details of a single video file.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
-| url | string | Required | The URL of the video itself. The video should be served from a CDN (Content Distribution Network). Supported formats are described in [Audio and Video Support](https://sdkdocs.roku.com/display/sdkdoc/Audio+and+Video+Support).
+| url | string | Required | The URL of the video itself. The video should be served from a CDN (Content Distribution Network). Supported formats are described in ...TODO.
 | quality | enum | Required | Must be one of the following:<ul><li>HD – 720p</li><li>FHD – 1080p</li><li>UHD – 4K</li></ul>If your stream uses an adaptive bitrate, set the quality to the highest available.
 | videoType | enum | Required | Must be one of the following:<ul><li>HLS</li><li>SMOOTH</li><li>DASH</li><li>MP4</li><li>MOV</li><li>M4V</li></ul>
 | bitrate | integer | Required only for non-ABR streams. | The bitrate in kbps. For non-adaptive streams, this must be provided. It is not needed for an ABR (e.g., HLS) stream.
@@ -469,11 +469,11 @@ Video Object Example:
 ### caption
 Child object of property `content` -> `captions`.
 
-This object represents a single video caption file of a video content. The supported formats are described in [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
+This object represents a single video caption file of a video content.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
-| url | string | Required | The URL of the video caption file. Supported formats are described in [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
+| url | string | Required | The URL of the video caption file.
 | language | string | Required | A language code for the subtitle (e.g., “en”, “es-mx”, “fr”, etc). [ISO 639-2 or alpha-3](https://www.loc.gov/standards/iso639-2/php/code_list.php) language code string.
 | captionType | enum | Required | A string specifying the type of caption. Default is subtitle. Must be one of the following:<ul><li>CLOSED_CAPTION</li><li>SUBTITLE</li></ul>
 
@@ -492,11 +492,11 @@ Caption File Object Example:
 ### trickPlayFile
 Child object of property `content` -> `trickPlayFiles`.
 
-This object represents a single trickplay file. Trickplay files are the images shown when a user scrubs through a video, either fast-forwarding or rewinding. The file must be in the Roku BIF format, as described in [Trick Mode Support](https://sdkdocs.roku.com/display/sdkdoc/Trick+Mode+Support).
+This object represents a single trickplay file. Trickplay files are the images shown when a user scrubs through a video, either fast-forwarding or rewinding.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
-| url | string | Required | The URL to the image representing the trickplay file Must be in the Roku BIF format, more information in the Trick Mode Support article.
+| url | string | Required | The URL to the image representing the trickplay file
 | quality | enum | Required | Must be one of the following:<ul><li>HD – 720p</li><li>FHD – 1080p</li></ul>
 
 Trickplay File Object Example:
@@ -559,7 +559,7 @@ Child object of property:
 * `shortFormVideo`
 * `tvSpecial`
 
-This object represents a third-party metadata provider ID (such as TMS, Rovi, IMDB, EIDR), that can provide more information about a specific video content. This information is used to optimize your content to be discovered within the Roku Search, and provide more details to users.
+This object represents a third-party metadata provider ID (such as TMS, Rovi, IMDB, EIDR), that can provide more information about a specific video content.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
