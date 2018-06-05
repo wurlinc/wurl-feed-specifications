@@ -586,6 +586,34 @@ External ID Object Example:
 
 ---
 
+## tag
+Child object of property:
+
+* `movie`
+* `series`
+* `shortFormVideo`
+* `tvSpecial`
+
+This object represents the tagging info.
+
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| genres | enum | Optional | An array of genres
+| keywords | enum | Optional | An array of keywords
+| categories | enum | Optional | An array of categories
+
+Rating Object Example:
+
+```json
+{
+  "genres": ["gaming", "technology"],
+  "keywords": ["gamescoop"],
+  "categories": ["foo", "bar"]
+}
+```
+
+---
+
 ## rating
 Child object of property:
 
