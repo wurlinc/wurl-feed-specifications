@@ -29,6 +29,9 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
  * [caption](#caption)
  * [trickPlayFile](#trickplayfile)
 * [genres](#genres)
+* [tag](#tag)
+* [group](#group)
+* [thumbnail](#thumbnail)
 * [externalId](#externalid)
 * [rating](#rating)
  * [Parental Ratings](#parental-ratings)
@@ -175,6 +178,7 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | shortDescription | string | Optional | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | [Tag Object](#tag) | Optional | One tag object.
+| groups | [Group Object](#group) | Optional | An array of groups (episodes grouped together).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
 
@@ -797,6 +801,80 @@ Tag Object Example:
   "keywords": ["gamescoop"],
   "categories": ["foo", "bar"]
 }
+```
+
+---
+
+## group
+Child object of property:
+
+* `movie`
+* `series`
+* `shortFormVideo`
+* `tvSpecial`
+
+This object represents an episode grouping.
+
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| name | string | Required | The name of the group.
+| episodes | enum | Required | An array of episodes
+
+Group Object Example:
+
+```json
+{
+"groups": [
+  {
+    "name": "demo",
+    "episodes": [
+      {
+        "id": "1408-0",
+        "title": "Episode title",
+        "content": {
+          "dateAdded": "2018-06-05T16:00:27+0000",
+          "videos": [
+            {
+              "url": "https://somesite.com/playlist.m3u8",
+              "quality": "HD",
+              "videoType": "HLS"
+            }
+          ],
+          "duration": 2940,
+          "captions": null,
+          "language": "en-US",
+          "adBreaks": "00:25:40"
+        },
+        "thumbnails": [
+          {
+            "name": "hero",
+            "width": 1920,
+            "height": 1080,
+            "url": "http://somecdn.com/thumbnails/episode.png"
+          }
+        ],
+        "episodeNumber": "1",
+        "releaseDate": "2018-06-05",
+        "description": "This week we're discussing more.",
+        "shortDescription": "",
+        "longDescription": "",
+        "credits": null,
+        "ratings": [
+          {
+            "rating": "PG",
+            "ratingSource": "USA_PR"
+          }
+        ],
+        "externalIds": null,
+        "tags": {
+          "genres": ["genre 1", "genre 2"],
+          "keywords": [],
+          "categories": []
+        }
+      }
+    ]
+}
+
 ```
 
 ---
