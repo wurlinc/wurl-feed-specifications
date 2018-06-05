@@ -267,6 +267,7 @@ This object represents a single episode in a series or a season.
 | description | string | Required | An episode description.
 | shortDescription | string | Optional | An episode description that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
+| tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the episode.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
@@ -283,7 +284,21 @@ Episode Object Example:
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "episodeNumber": 1,
   "Description": "Marvelous episode description that is a little longer than shortDescription",
-  "shortDescription": "Marvelous episode description"
+  "shortDescription": "Marvelous episode description",
+  "tags": {
+      "genres": [
+        "genre 1",
+        "genre 2"
+      ],
+      "keywords": [
+        "keyword 1",
+        "keyword 2"
+      ],
+      "categories": [
+        "category 1",
+        "category 2"
+      ]
+    }
 
 }
 ```
@@ -305,7 +320,7 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | shortDescription | string | Optional | A description of the video that does not exceed 200 characters. The text will be clipped if longer.
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | longDescription | string | Optional | A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
-| tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
+| tags | [Tag Object](#tag) | Optional | One tag object.
 | genres | string | Optional | The genre(s) of the video. Must be one of the values listed in [Genres](#genres).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the video.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
@@ -321,7 +336,21 @@ Short-form Video Object Example:
   },
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "shortDescription": "Astonishing short-form video",
-  "releaseDate": "2016-01-01"
+  "releaseDate": "2016-01-01",
+  "tags": {
+      "genres": [
+        "genre 1",
+        "genre 2"
+      ],
+      "keywords": [
+        "keyword 1",
+        "keyword 2"
+      ],
+      "categories": [
+        "category 1",
+        "category 2"
+      ]
+    }
 }
 ```
 
@@ -342,7 +371,7 @@ Child object of root property `tvSpecials`.
 | longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the TV special.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
-| tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
+| tags | [Tag Object](#tag) | Optional | One tag object.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
 
 TV Special Object Example:
@@ -360,7 +389,21 @@ TV Special Object Example:
     "fantasy",
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
-  "shortDescription": "Unusual episode description"
+  "shortDescription": "Unusual episode description",
+  "tags": {
+      "genres": [
+        "genre 1",
+        "genre 2"
+      ],
+      "keywords": [
+        "keyword 1",
+        "keyword 2"
+      ],
+      "categories": [
+        "category 1",
+        "category 2"
+      ]
+    }
 }
 ```
 
