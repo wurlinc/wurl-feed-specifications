@@ -93,7 +93,7 @@ This object represents a movie object.
 | title | string | Required | Movie title. Please use plain text and don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
-| thumbnail | [Thumbnail Object](#thumnail) | Required | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the movie was initially released or first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | description | string | Required | The movie description.
 | shortDescription | string | Optional | A movie description that does not exceed 200 characters. The text will be clipped if longer.
@@ -117,7 +117,6 @@ Movie Object Example:
         "comedy",
         "horror"
     ],
-    "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
     "releaseDate": "2016-01-01",
     "description": "Incredible movie description probably is longer than shortDescription",
     "shortDescription": "Incredible movie description",
@@ -170,7 +169,7 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | episodes | [Episode Object](#episode) | Required* | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).
 | |
 | genres | string | Required | The genre(s) of the series. Must be one of the values listed in [Genres](#genres).
-| thumbnail | [Thumbnail Object](#thumnail) | Required | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the series first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | description | string | Required | A description of the series.
 | shortDescription | string | Optional | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
@@ -274,7 +273,7 @@ This object represents a single season of a series.
 | seasonNumber | integer | Required | Sequential season number. E.g.: 3 or 2015.
 | episodes | [Episode Object](#episode) | Required | One or more episodes of this particular season.
 | seasonTitle | string | Optional | The season title.
-| thumbnail | [Thumbnail Object](#thumnail) | Optional | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Optional | One or more thumbnails for the movie.
 
 Season Object Example:
 
@@ -303,7 +302,7 @@ This object represents a single episode in a series or a season.
 | id | string | Required | Your immutable string reference ID for the episode. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Episode title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnail | [Thumbnail Object](#thumnail) | Required | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | episodeNumber | integer | Required | The sequential episode number. E.g.: 3.
 | releaseDate | string | Required | The date the episode first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | description | string | Required | An episode description.
@@ -370,7 +369,7 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | id | string | Required | Your immutable string reference ID for the video. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Video title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnail | [Thumbnail Object](#thumnail) | Required | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | description | string | Required | A description of the video.
 | shortDescription | string | Optional | A description of the video that does not exceed 200 characters. The text will be clipped if longer.
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
@@ -432,7 +431,7 @@ Child object of root property `tvSpecials`.
 | id | string | Required | Your immutable string reference ID for the TV Special. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Episode title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnail | [Thumbnail Object](#thumnail) | Required | One or more thumbnails for the movie.
+| thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | releaseDate | string | Required | The date the TV Special first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | shortDescription | string | Required | A description of the special that does not exceed 200 characters. The text will be clipped if longer.
