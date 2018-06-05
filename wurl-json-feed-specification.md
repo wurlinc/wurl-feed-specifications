@@ -679,17 +679,6 @@ This object represents a single person in the credits of a video content.
 
 ---
 
-## Change Log
-
-* **2017-05-02** - Updated enumerations for `role` within a `credit` object
-* **2016-08-18** - Removed UHD as an option from trickPlayFile -> quality.
-* **2016-08-11** - Added SD to the qualities available for `video` -> `quality`. Updated `shortFormVideo`, `releaseDate` is now a required property.
-* **2016-07-28** - Fixed `playlist` -> `itemIds` property description to not include episodes.
-* **2016-07-18** - Updated `thumbnail` property description.
-* **2016-07-08** - Updated `shortDescription` limit from 60 to 200 characters. Added `adBreaks` property to `content`.
-* **2016-05-17** - Updated objects and properties descriptions, added horizontal lines between objects to improve reading, added a few more examples.
-* **2016-04-25** - All properties documented with Name, Type, Required, and Description fields.
-* **2016-04-14** - Document created.
 
 ## References
 
