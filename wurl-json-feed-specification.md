@@ -44,16 +44,16 @@ These are the properties for the root object of your feed. It contains basic inf
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
+| feedVersion | string | Required | The version of the feed specification.
+| wurlChannelSlug | string | Required | A channel identifier that can be used to query the Wurl API for additional channel meta data.
 | providerName | string | Required | The name of the feed provider. E.g.: “Acme Productions”.
 | lastUpdated | string | Required | The date that the feed was last modified in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 | language | string | Required | The language the channel uses for all its information and descriptions. (e.g., “en”, “en-US”, “es”, etc.). ISO 639 alpha-2 or alpha-3 language code string.
-| |
 | movies | [Movie Object](#movie) | Required* | A list of one or more movies.
 | series | [Series Object](#series) | Required* | A list of one or more series. Series are episodic in nature and would include TV shows, daily/weekly shows, etc.
 | shortFormVideos | [ShortFormVideo Object](#shortformvideo) | Required* | A list of one or more short-form videos. Short-form videos are usually less than 20 minutes long and are not TV Shows or Movies.
 | tvSpecials | [TV Special Object](#tvspecial) | Required* | A list of one or more TV Specials. TV Specials are one-time TV programs that are not part of a series.
-| |
-| playlists | [Playlist Object](#playlist) | Optional | A list of one or more playlists. They are useful for creating manually ordered categories inside your channel.
+| playlists | [Playlist Object](#playlist) | Optional | A list of one or more playlists.
 
 > :information_source: *At least one of these content types is required
 
@@ -61,8 +61,10 @@ Feed Root Object Example:
 
 ```json
 {
-    "providerName": "Acme Productions",
-    "lastUpdated": "2015-11-11T22:21:37+00:00",
+    "feedVersion": "0.1",
+    "providerName": "Wurl Productions",
+    "wurlChannelSlug": "alt_channel",
+    "lastUpdated": "2017-11-11T22:21:37+00:00",
     "language": "en",
     "playlists": [
         ...
