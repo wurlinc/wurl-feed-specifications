@@ -20,7 +20,6 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
 * [tvSpecial](#tvspecial)
 
 **Content categorization:**
-* [category](#category)
 * [playlist](#playlist)
 
 **Content properties:**
@@ -498,48 +497,6 @@ TV Special Object Example:
         "category 2"
       ]
     }
-}
-```
-
----
-
-## category
-Child object of root property `categories`.
-
-The category object defines a new category your channel will display, and the content included in it based either on a playlist (see object description below), or a query containing one or multiple tags.
-
-There are three default categories in every channel: "Continue Watching", "Most Popular", and "Recently Added".
-
-Each category is displayed as a separate row to end-users.
-
-| Field | Type | Required | Description |
-| ----- | ---- | -------- | ----------- |
-| name | string | Required | The name of the category that will show up in the channel.
-| |
-| playlistName | string | Required* | The name of the playlist in this feed that contains the content for this category.
-| query | string | Required* | The query that will specify the content for this category. It is a Boolean expression containing tags that you have provided in your content feed. The available operators are: <ul><li>AND</li><li>OR</li></ul>You cannot use both of them in the same query. You can use more than one. For example, if your feed has the tags "romance", "movie", "korean" and "dramas", you could do:<ul><li>movie AND korean</li><li>movie AND korean AND dramas</li><li>romance OR dramas</li></ul>The following is NOT supported:<ul></li><li>movie AND romance OR dramas</li></ul> |
-| |
-| order | enum | Required | The order of the category.
-
-> :information_source: Must have either `playlistName` or `query`
-
-Category Object Example (query):
-
-```json
-{
-    "name": "Cooking Shows",
-    "query": "cooking AND reality shows",
-    "order": "most_popular"
-}
-```
-
-Category Object Example (playlist):
-
-```json
-{
-    "name": "Featured",
-    "playlistName": "featured content",
-    "order": "manual"
 }
 ```
 
