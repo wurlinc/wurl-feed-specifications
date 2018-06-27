@@ -1,7 +1,8 @@
 # Wurl Feed Specifications
 
 ### Overview
-Your content is the most important part of your application. With Direct Publisher, you can now create a channel using an existing MRSS feed or the Direct Publisher feed (JSON). The following specifications outline the necessary information required for feed-based channels.
+This is the Wurl feed specification that we prefer to use for outbound feeds from the Wurl platform.
+
 
 - - -
 
