@@ -14,8 +14,8 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
 **Content types:**
 * [movie](#movie)
 * [series](#series)
- * [season](#season)
- * [episode](#episode)
+* [season](#season)
+* [episode](#episode)
 * [shortFormVideo](#shortformvideo)
 * [tvSpecial](#tvspecial)
 
@@ -24,17 +24,18 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
 
 **Content properties:**
 * [content](#content)
- * [video](#video)
- * [caption](#caption)
- * [trickPlayFile](#trickplayfile)
+* [video](#video)
+* [caption](#caption)
+* [trickPlayFile](#trickplayfile)
 * [genres](#genres)
 * [tag](#tag)
 * [group](#group)
 * [thumbnail](#thumbnail)
 * [externalId](#externalid)
 * [rating](#rating)
- * [Parental Ratings](#parental-ratings)
- * [Rating Sources](#rating-sources)
+* [Parental Ratings](#parental-ratings)
+* [Rating Sources](#rating-sources)
+* [adbreak](#adbreak)
 * [credit](#credit)
 
 ---
