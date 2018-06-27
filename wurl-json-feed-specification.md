@@ -96,7 +96,6 @@ This object represents a movie object.
 | id | string | Required | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Movie title. Please use plain text and don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the movie was initially released or first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | description | string | Required | The movie description.
@@ -116,11 +115,6 @@ Movie Object Example:
     "content": {
         ...
     },
-    "genres": [
-        "drama",
-        "comedy",
-        "horror"
-    ],
     "releaseDate": "2016-01-01",
     "description": "Incredible movie description probably is longer than shortDescription",
     "shortDescription": "Incredible movie description",
@@ -172,7 +166,6 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | seasons | [Season Object](#season) | Required* | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.
 | episodes | [Episode Object](#episode) | Required* | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).
 | |
-| genres | string | Required | The genre(s) of the series. Must be one of the values listed in [Genres](#genres).
 | thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the series first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | description | string | Required | A description of the series.
@@ -193,11 +186,6 @@ Series Object Example (seasons):
   "title": "The Amazing Series with Seasons!",
   "seasons": [
     ...
-  ],
-  "genres": [
-    "educational",
-    "science fiction",
-    "thriller",
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
   "description": "A series description",
@@ -247,11 +235,6 @@ Series Object Example (mini-series):
   ],
   "groups": [
     ...
-  ],
-  "genres": [
-    "fashion",
-    "romance",
-    "technology",
   ],
   "thumbnails": [
     {
@@ -390,7 +373,6 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | longDescription | string | Optional | A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | [Tag Object](#tag) | Optional | One tag object.
-| genres | string | Optional | The genre(s) of the video. Must be one of the values listed in [Genres](#genres).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the video.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
 
@@ -447,7 +429,6 @@ Child object of root property `tvSpecials`.
 | title | string | Required | Episode title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnail | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
-| genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | releaseDate | string | Required | The date the TV Special first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | shortDescription | string | Required | A description of the special that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
@@ -465,11 +446,6 @@ TV Special Object Example:
   "content": {
     ...
   },
-  "genres": [
-    "animals",
-    "animated",
-    "fantasy",
-  ],
   "thumbnails": [
     {
       "name": "default",
@@ -509,7 +485,7 @@ Child object of root property `playlists`.
 
 A playlist is an **ordered** list of videos that may contain a mix of [Movies](#movie), [Series](#series), [Short-form videos](#shortformvideo), and [TV Specials](#tvspecial). It references a list of video IDs that are defined elsewhere in the feed. The same video can be referenced in multiple playlists.
 
-Playlists are similar to tags: they help you define the content which your channel's categories will display. The main difference is that playlists let you manually specify the order of the content, and so they are perfect, for example, to create a "Featured" category in your channel.
+Playlists let you manually specify the order of the content, and so they are perfect, for example, to create a "Featured" category in your channel.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
