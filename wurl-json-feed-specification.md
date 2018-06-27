@@ -99,9 +99,8 @@ This object represents a movie object.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the movie was initially released or first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| description | string | Required | The movie description.
-| shortDescription | string | Optional | A movie description that does not exceed 200 characters. The text will be clipped if longer.
-| longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
+| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the movie.
 | ratings | [Rating Object](#rating) | Optional | One or more parental ratings for the content.
@@ -117,7 +116,6 @@ Movie Object Example:
         ...
     },
     "releaseDate": "2016-01-01",
-    "description": "Incredible movie description probably is longer than shortDescription",
     "shortDescription": "Incredible movie description",
     "longDescription": "Even more incredible and longer movie description",
     "tags": {
@@ -175,9 +173,8 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | |
 | thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the series first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| description | string | Required | A description of the series.
-| shortDescription | string | Optional | A description of the series that does not exceed 200 characters.
-| longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
+| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | groups | [Group Object](#group) | Optional | An array of groups (episodes grouped together).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
@@ -196,7 +193,6 @@ Series Object Example (seasons):
     ...
   ],
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
-  "description": "A series description",
   "shortDescription": "Wondrous series seasons.",
   "groups": {
     ...
@@ -258,7 +254,6 @@ Series Object Example (mini-series):
       "url": "http://static.channels.com/thumbnails/show123-hero.png"
     }
   ],
-  "description": "A description",
   "shortDescription": "Unbelievables series episodes."
 }
 ```
@@ -311,9 +306,8 @@ This object represents a single episode in a series or a season.
 | thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | episodeNumber | integer | Required | The sequential episode number. E.g.: 3.
 | releaseDate | string | Required | The date the episode first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| description | string | Required | An episode description.
-| shortDescription | string | Optional | An episode description that does not exceed 200 characters.
-| longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
+| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the episode.
 | ratings | [Rating Object](#rating) | Optional | One or more parental ratings for the content.
@@ -343,7 +337,6 @@ Episode Object Example:
     }
   ],
   "episodeNumber": 1,
-  "Description": "Marvelous episode description that is a little longer than shortDescription",
   "shortDescription": "Marvelous episode description",
   "tags": {
       "genres": [
@@ -376,10 +369,9 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | title | string | Required | Video title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
-| description | string | Required | A description of the video.
-| shortDescription | string | Optional | A description of the video that does not exceed 200 characters. The text will be clipped if longer.
+| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| longDescription | string | Optional | A longer description exceeding 200.
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| longDescription | string | Optional | A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the video.
 | ratings | [Rating Object](#rating) | Optional | One or more parental ratings for the content.
@@ -438,8 +430,8 @@ Child object of root property `tvSpecials`.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
 | releaseDate | string | Required | The date the TV Special first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Required | A description of the special that does not exceed 200 characters. The text will be clipped if longer.
-| longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
+| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| longDescription | string | Optional | A longer description exceeding 200.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the TV special.
 | ratings | [Rating Object](#rating) | Optional | One or more parental ratings for the content.
 | tags | [Tag Object](#tag) | Optional | One tag object.
@@ -818,7 +810,6 @@ Group Object Example:
         ],
         "episodeNumber": "1",
         "releaseDate": "2018-06-05",
-        "description": "This week we're discussing more.",
         "shortDescription": "",
         "longDescription": "",
         "credits": null,
