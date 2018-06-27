@@ -535,7 +535,7 @@ This object represents the details about a single video content of a movie, epis
 | language | string | Optional | The language in which the video was originally produced (e.g., “en”, “en-US”, “es”, etc). ISO 639 alpha-2 or alpha-3 language code string.
 | validityPeriodStart | string | Optional | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 | validityPeriodEnd | string | Optional | The date when the content is no longer available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
-| adBreaks | Ad Break Object](#adbreak) | Optional | One or more time codes. Represents a time duration from the beginning of the video where an ad shows up. Conforms to the format: {hh}:{mm}:{ss}.
+| adBreaks | [Ad Break Object](#adbreak) | Optional | One or more time codes. Represents a time duration from the beginning of the video where an ad shows up. Conforms to the format: {hh}:{mm}:{ss}.
 
 Content Object Example:
 
