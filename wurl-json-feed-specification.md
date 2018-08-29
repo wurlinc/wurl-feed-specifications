@@ -97,9 +97,9 @@ This object represents a movie object.
 | id | string | Required | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Movie title. Please use plain text and don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
+| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution. Must include one thumbnail with at least 1280x720 resolution.
 | releaseDate | string | Required | The date the movie was initially released or first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| shortDescription | string | Required | A description that does not exceed 200 characters.
 | longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the movie.
@@ -171,9 +171,9 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | seasons | [Season Object](#season) | Required* | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.
 | episodes | [Episode Object](#episode) | Required* | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).
 | |
-| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
+| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution.  Must include one thumbnail with at least 1280x720 resolution.
 | releaseDate | string | Required | The date the series first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| shortDescription | string | Required | A description that does not exceed 200 characters.
 | longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | groups | [Group Object](#group) | Optional | An array of groups (episodes grouped together).
@@ -270,7 +270,7 @@ This object represents a single season of a series.
 | seasonNumber | integer | Required | Sequential season number. E.g.: 3 or 2015.
 | episodes | [Episode Object](#episode) | Required | One or more episodes of this particular season.
 | seasonTitle | string | Optional | The season title.
-| thumbnails | [Thumbnail Object](#thumbnail) | Optional | One or more thumbnails for the movie.
+| thumbnails | [Thumbnail Object](#thumbnail) | Optional | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution.  Must include one thumbnail with at least 1280x720 resolution.
 | groups | [Group Object](#group) | Optional | An array of groups (episodes grouped together).
 
 Season Object Example:
@@ -303,10 +303,10 @@ This object represents a single episode in a series or a season.
 | id | string | Required | Your immutable string reference ID for the episode. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Episode title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
+| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution.
 | episodeNumber | integer | Required | The sequential episode number. E.g.: 3.
 | releaseDate | string | Required | The date the episode first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| shortDescription | string | Required | A description that does not exceed 200 characters.
 | longDescription | string | Optional | A longer description exceeding 200.
 | tags | [Tag Object](#tag) | Optional | One tag object.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the episode.
@@ -368,8 +368,8 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | id | string | Required | Your immutable string reference ID for the video. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Video title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
-| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution.
+| shortDescription | string | Required | A description that does not exceed 200 characters.
 | longDescription | string | Optional | A longer description exceeding 200.
 | releaseDate | string | Required | The date the video first became available. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | tags | [Tag Object](#tag) | Optional | One tag object.
@@ -428,9 +428,9 @@ Child object of root property `tvSpecials`.
 | id | string | Required | Your immutable string reference ID for the TV Special. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Episode title. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails for the movie.
+| thumbnails | [Thumbnail Object](#thumbnail) | Required | One or more thumbnails. Must include one thumbnail with at least 1280x720 resolution.
 | releaseDate | string | Required | The date the TV Special first aired. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
-| shortDescription | string | Optional | A description that does not exceed 200 characters.
+| shortDescription | string | Required | A description that does not exceed 200 characters.
 | longDescription | string | Optional | A longer description exceeding 200.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the TV special.
 | ratings | [Rating Object](#rating) | Optional | One or more parental ratings for the content.
