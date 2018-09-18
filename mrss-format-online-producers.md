@@ -125,7 +125,7 @@ Assigns a TMS Series or Episode ID.
 ```xml
 <media:category scheme="urn:iab:categories" label="Video and Computer Games">IAB9-30</media:category>
 ```
-Specify a category for your video using the IAB Content Category taxonomy. The categories are documented in the [IAB’s OPENRTB API Specification Version 2.1](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf). See the "Web Series MRSS Example" below for a sample or learn more about this by reading the [specification](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf) or by looking at these [examples](http://dev.twitter.com/mopub/marketplace/iab-categorization)
+Specify a category for your video using the IAB Content Category taxonomy. The categories are documented in the [IAB’s OPENRTB API Specification Version 2.1](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf). See the "Web Series MRSS Example" below for a sample or learn more about this by reading the [specification](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf)
 
 ### Credit
 ```xml
