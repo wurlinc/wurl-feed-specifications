@@ -92,7 +92,7 @@ This item level tag is intended for including closed captions. You can have many
 -
 
 ### Series Example
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"
                    xmlns:dcterms="http://purl.org/dc/terms/"
@@ -151,7 +151,7 @@ This item level tag is intended for including closed captions. You can have many
 ```
 
 ### VOD Movie Example
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"
                    xmlns:dcterms="http://purl.org/dc/terms/"
@@ -195,15 +195,4 @@ This item level tag is intended for including closed captions. You can have many
   </channel>
 </rss>
 ```
-
-### Resources
-
-| Reference                                      | URL
-|-------------------------------------------     | ----------
-| XML 1.0 Specification                          | <http://www.w3.org/TR/REC-xml/>
-| RSS 2.0 Specification                          | <http://www.rssboard.org/rss-specification>
-| Media RSS Specification                        | <http://www.rssboard.org/media-rss>
-| Dublin Core Specification                      | <http://dublincore.org/documents/dc-xml-guidelines/>
-| W3C Feed Validation Service                    | <https://validator.w3.org/feed/>
-| Wurl MRSS Tags                                 | [Wurl MRSS Tags](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md')
 
