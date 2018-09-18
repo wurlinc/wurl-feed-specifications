@@ -8,7 +8,7 @@ For video producers submitting programming for use in Wurl "Streaming Channels",
 
 Before submitting your feed to Wurl, make sure your feed validates using one of the available validation tools.
 
-#### Elements in `<channel>` section of your syndication feed:
+## Elements in `<channel>` section of your syndication feed:
 
 ### Title
 ```xml
@@ -59,7 +59,7 @@ _Required_. Date and time of last feed update in RFC-822 date-time format.
 _Required if series feed_. Series tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 
-#### Your syndication feed should contain multiple `<item>` groups, one for each video. Elements in `<item>` section of feed:
+## Your syndication feed should contain multiple `<item>` groups, one for each video. Elements in `<item>` section of feed:
 
 
 ### Title
@@ -153,7 +153,7 @@ Copyright information for the video. [More...](http://www.rssboard.org/media-rss
 _Optional_. Episode tag containing additional episode info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 
-#### Web Series MRSS Example:
+## Web Series MRSS Example:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
