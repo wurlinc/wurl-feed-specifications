@@ -38,7 +38,7 @@ If the item is an episode belonging to a series, this tag may be used to include
 |--------------------------|----------------------------------------------------------------------------|------------|---------------------------------
 | `<wurl:episode>`         | wurl:episode start element.                                                |            |
 | `<wurl:officialTitle>`   | **Required**. Official Episode title.                                      | String     | Winter Is Coming
-| `<wurl:seasonNumber>`    | **Required**. The series season number.                                    | String     | 1
+| `<wurl:seasonNumber>`    | **Required** The series season number if it has one.                       | String     | 1
 | `<wurl:episodeNumber>`   | **Required**. The episode number.                                          | Integer    | 3
 | `<wurl:firstAired>`      | **Optional**. When the episode was first aired. RFC-822 date-time.         | Date       | Thu, 10 Sep 2015 12:00:00 GMT
 | `</wurl:episode>`        | wurl:episode end element.                                                  |            |
