@@ -105,11 +105,22 @@ _Required_. Highly relevant keywords describing the video. Recommended limit of 
 ```
 A string that uniquely identifies the item, typically a URL.
 
-### Genre
+### Genres
 ```xml
 <media:category scheme="urn:wurl:genre">Cooking</media:category>
 ```
-Assigns a genre.
+Assigns a genre. Video Service specific genres can be added like this:
+
+```xml
+<media:category scheme="urn:roku:genre">Action</media:category>
+<media:category scheme="urn:roku:genre">Comedy</media:category>
+<media:category scheme="urn:samsung:genre">Drama</media:category>
+<media:category scheme="urn:samsung:genre">Movies</media:category>
+<media:category scheme="urn:sinclair:genre">Suspense</media:category>
+<media:category scheme="urn:sinclair:genre">Kids</media:category>
+<media:category scheme="urn:nielsen:genre">Devotional</media:category>
+<media:category scheme="urn:nielsen:genre">Documentary, General</media:category>
+```
 
 ### TMS
 ```xml
