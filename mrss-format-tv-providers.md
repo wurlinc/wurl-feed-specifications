@@ -198,7 +198,7 @@ In order to add a watermark into the transcode video the tag below can be used f
 - **width** - percentage size of original image - e.g. 10
 - **height** - percentage size of original image - e.g. 10
 
-```
+```xml
 <wurl:watermark>
   <wurl:imageUrl>http://wurl-videos-dev.com/WM/asset/Foo_Logo.png</wurl:imageUrl>
   <wurl:xPosition>-5%</wurl:xPosition>
