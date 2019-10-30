@@ -192,7 +192,7 @@ This allows the permissible audience to be declared. [More...](https://github.co
 In order to add a watermark into the transcode video the tag below can be used for that purpose. Properties:
 
 - **url** - url to png file
-- **x** - coordinate can be pixel or percentage - e.g. -10% is 10% from right side
+- **x** - x coordinate can be pixel or percentage - e.g. -10% is 10% from right side
 - **y** - y coordinate can be pixel or percentage - e.g. -10% is 10% from bottom side
 - **opacity** - from 1.0 to 0.0 where 0.0 is fully transparent - e.g. 0.3
 - **width** - percentage size of original image - e.g. 10
