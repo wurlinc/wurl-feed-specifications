@@ -187,6 +187,27 @@ Optional tag to include closed captions. [More...](https://github.com/wurlinc/wu
 ```
 This allows the permissible audience to be declared. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
+### Watermark
+
+In order to add a watermark into the transcode video the tag below can be used for that purpose. Properties:
+
+- **url** - url to png file
+- **x** - coordinate can be pixel or percentage - e.g. -10% is 10% from right side
+- **y** - y coordinate can be pixel or percentage - e.g. -10% is 10% from bottom side
+- **opacity** - from 1.0 to 0.0 where 0.0 is fully transparent - e.g. 0.3
+- **width** - percentage size of original image - e.g. 10
+- **height** - percentage size of original image - e.g. 10
+
+```
+<wurl:watermark>
+  <wurl:imageUrl>http://wurl-videos-dev.com/WM/asset/Foo_Logo.png</wurl:imageUrl>
+  <wurl:xPosition>-5%</wurl:xPosition>
+  <wurl:yPosition>-4%</wurl:yPosition>
+  <wurl:opacity>0.3</wurl:opacity>
+  <wurl:width>12%</wurl:width>
+  <wurl:height>10%</wurl:height>
+</wurl:watermark>
+```
 
 ## Movie MRSS Example:
 
