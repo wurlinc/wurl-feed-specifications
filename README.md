@@ -20,7 +20,7 @@ This is a JSON format that is supported for all types of content, including Movi
 
 ### MRSS Feed Format
 
-When using MRSS, please provide Wurl with a syndication feed in standard RSS 2.0/MRSS format. Wurl requires some additional tags depending on what type of content provider you are. If you are an online video producer you should use the [Format for online Video Producers](https://github.com/wurlinc/wurl-feed-specifications/blob/master/mrss-format-online-producers.md) and if you are a Movie or TV series provider you should use the [Format for Movie or TV series providers](https://github.com/wurlinc/wurl-feed-specifications/blob/master/mrss-format-tv-providers.md)
+When using MRSS, please provide Wurl with a syndication feed in standard RSS 2.0/MRSS format. Wurl requires some additional Wurl defined tags in order to ingest additional meta data that is not covered in the standard specification. See [Wurl MRSS Feed format](https://github.com/wurlinc/wurl-feed-specifications/blob/master/mrss-feed-spec.md).
 
 #### Resources
 

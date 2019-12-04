@@ -91,6 +91,23 @@ This item level tag is intended for including closed captions. You can have many
 
 -
 
+#### Watermark
+
+This item level tag is intended for specifying a watermark for the transcoded video.
+
+| Element                  | Description                                                                                | Data type | Example
+|--------------------------|--------------------------------------------------------------------------------------------|------------|---------------------------------
+| `<wurl:watermark>`       | wurl:watermark start element.                                                              |            |
+| `<wurl:imageUrl>`        | **Required**. The URL to the image. Supports PNG                                           | String     | http://videos.com/assets/Foo_Logo.png
+| `<wurl:xPosition>`       | **Required**. x coordinate can be pixel or percentage - e.g. -10% is 10% from right side.  | String     | -5%
+| `<wurl:yPosition>`       | **Required**. y coordinate can be pixel or percentage - e.g. -10% is 10% from bottom side. | String     | -4%
+| `<wurl:opacity>`         | **Required**. from 1.0 to 0.0 where 0.0 is fully transparent - e.g. 0.3.                   | String     | 0.3
+| `<wurl:width>`           | **Required**. percentage size of original image - e.g. 10.                                 | String     | 12%
+| `<wurl:height>`          | **Required**. percentage size of original image - e.g. 10.                                 | String     | 10%
+| `</wurl:watermark>`      | wurl:watermark end element.                                                                |            |
+
+-
+
 ### Series Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,7 +161,14 @@ This item level tag is intended for including closed captions. You can have many
         <wurl:firstAired>Sun, 17 Apr 2011 00:00:00 -0000</wurl:firstAired>
       </wurl:episode>
       <wurl:cuepoints>910,1536,4319</wurl:cuepoints>
-
+      <wurl:watermark>
+        <wurl:imageUrl>http://wurl-videos-dev.com/WM/asset/Foo_Logo.png</wurl:imageUrl>
+        <wurl:xPosition>-5%</wurl:xPosition>
+        <wurl:yPosition>-4%</wurl:yPosition>
+        <wurl:opacity>0.3</wurl:opacity>
+        <wurl:width>12%</wurl:width>
+        <wurl:height>10%</wurl:height>
+      </wurl:watermark>
     </item>
   </channel>
 </rss>
