@@ -15,6 +15,7 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [link](#channel-link)
   * [pub-date](#channel-pubdate)
   * [series](#channel-series)
+  * [key](#channel-key)
 * [Item](#items)
   * [title](#item-title)
   * [description](#item-description)
@@ -37,6 +38,7 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [movie](#item-movie)
   * [wurl-tag](#item-tag)
   * [watermark](#item-watermark)
+  * [key](#item-key)
 * [Web Series MRSS Example](#series-example)
 * [TV Series MRSS Example](#series-example)
 * [Movie MRSS Example](#movie-example)
@@ -90,6 +92,12 @@ _Required_. Date and time of last feed update in RFC-822 date-time format.
 </wurl:series>
 ```
 _Required if series feed_. Series tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
+
+### Key <a id="channel-key"></a>
+```xml
+<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+```
+_Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
 
 
 ## Item <a id="items"></a>
@@ -259,6 +267,12 @@ _Optional_. This allows you to tag a video as being a promotional video or ad sl
 ```
 
 _Optional_. Tag to add a watermark into the transcode video. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
+
+### Key <a id="item-key"></a>
+```xml
+<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+```
+_Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
 
 ## Web Series MRSS Example:
 
