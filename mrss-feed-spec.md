@@ -96,8 +96,11 @@ _Required if series feed_. Series tag containing series info. [More...](https://
 ### Key <a id="channel-key"></a>
 ```xml
 <media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
 ```
 _Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
+The values provided at this level, will be propagated to all the item nodes.
+If you wish to override these "key" values for a particular item node just add the tags to the given node.
 
 
 ## Item <a id="items"></a>
@@ -271,6 +274,7 @@ _Optional_. Tag to add a watermark into the transcode video. [More...](https://g
 ### Key <a id="item-key"></a>
 ```xml
 <media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
 ```
 _Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
 
