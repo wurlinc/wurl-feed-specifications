@@ -1,6 +1,6 @@
 # MRSS feed format for Wurl Platform
 
-This page describes the MRSS format video producers is recommended to use in order to on-board their content to the Wurl Platform. We make use of standard RSS/MRSS tags, but in some cases Wurl defined tags will need to be used.
+This page describes the MRSS format video producers are recommended to use in order to on-board their content to the Wurl Platform. We make use of standard RSS/MRSS tags, but in some cases Wurl defined tags will need to be used.
 
 Wurl will transcode your videos to ensure playback on a variety of target platforms. Note that the format of your videos you provide in the feed need to conform to the [Mezzanine Specification](https://github.com/wurlinc/wurl-feed-specifications/blob/master/recommended-video-formats.md).
 
@@ -27,17 +27,18 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [tms](#item-tms)
   * [genres](#item-genres)
   * [iab](#item-iab)
-  * [credit](#item-credit)
-  * [copyright](#item-copyright)
   * [terms](#item-terms)
-  * [price](#item-price)
   * [closed captions](#item-cc)
   * [ratings](#item-ratings)
   * [episode](#item-episode)
   * [movie](#item-movie)
   * [wurl-tag](#item-tag)
   * [watermark](#item-watermark)
-* [Web Series MRSS Example](#series-example)
+* [Item Undelivered](#itemundelivered)
+  * [credit](#item-credit)
+  * [copyright](#item-copyright)
+  * [price](#item-price)
+* [ShortForm Video MRSS Example](#shortform-example)
 * [TV Series MRSS Example](#series-example)
 * [Movie MRSS Example](#movie-example)
 
@@ -177,31 +178,11 @@ _Optional_. Assigns a genre. Video Service specific genres can be added like thi
 ```
 _Optional_. Specify a category for your video using the IAB Content Category taxonomy. The categories are documented in the [IAB’s OPENRTB API Specification Version 2.1](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf). See the "Web Series MRSS Example" below for a sample or learn more about this by reading the [specification](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf)
 
-### Credit <a id="item-credit"></a>
-```xml
-<media:credit role="actor">Peter Dinklage</media:credit>
-<media:credit role="director">Tim Van Patten</media:credit>
-<media:credit role="author">David Benioff</media:credit>
-```
-_Optional_. Notable entity that contributed to the creation of the media object. May include actors, producers, studios, etc. [More...](http://www.rssboard.org/media-rss#media-credit)
-
-### Copyright <a id="item-copyright"></a>
-```xml
-<media:copyright>Wurl 2018</media:copyright>
-```
-_Optional_. Copyright information for the video. [More...](http://www.rssboard.org/media-rss#media-copyright)
-
 ### Valid <a id="item-terms"></a>
 ```xml
 <dcterms:valid>start=Tue, 02 Dec 2014 00:00:00 -0600;end=Tue, 30 Jun 2015 00:00:00 -0500;scheme=W3C-DTF</dcterms:valid>
 ```
 _Optional_. Start and end date indicating the time period the video is available for viewing. See example below.
-
-### Price <a id="item-price"></a>
-```xml
-<wurl:price type="rent" amount="19.99" currency="USD"/>
-```
-_Optional_. Pricing information about a media object. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 ### ClosedCaptions <a id="item-cc"></a>
 ```xml
@@ -260,7 +241,31 @@ _Optional_. This allows you to tag a video as being a promotional video or ad sl
 
 _Optional_. Tag to add a watermark into the transcode video. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
-## Web Series MRSS Example:
+## Item Undelivered <a id="itemundelivered"></a>
+
+Undeliverd fields are fields on supported and stored via MRSS ingestion but currently are not delivered to video services. They are optional fields that can be included in the case that Wurl and video services support them in the future. Each of these elements are are part of the `<item>` section of feed: 
+
+### Credit <a id="item-credit"></a>
+```xml
+<media:credit role="actor">Peter Dinklage</media:credit>
+<media:credit role="director">Tim Van Patten</media:credit>
+<media:credit role="author">David Benioff</media:credit>
+```
+_Optional_. Notable entity that contributed to the creation of the media object. May include actors, producers, studios, etc. [More...](http://www.rssboard.org/media-rss#media-credit)
+
+### Copyright <a id="item-copyright"></a>
+```xml
+<media:copyright>Wurl 2018</media:copyright>
+```
+_Optional_. Copyright information for the video. [More...](http://www.rssboard.org/media-rss#media-copyright)
+
+### Price <a id="item-price"></a>
+```xml
+<wurl:price type="rent" amount="19.99" currency="USD"/>
+```
+_Optional_. Pricing information about a media object. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
+
+## ShortForm Video MRSS Example: <a id="shortform-example"></a>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
