@@ -57,18 +57,6 @@ If the item is a VOD movie, this tag may be used to include additional movie rel
 
 -
 
-#### Price Info
-
-This tag is intended for including price information for VOD items.
-
-| Element                  | Attribute           | Description                                          | Data type  | Example
-|--------------------------|---------------------|------------------------------------------------------|------------|---------------------------------
-| `<wurl:price>`           | type                | 'rent', 'purchase' or 'subscription'.                | String     | rent
-| `<wurl:price>`           | amount              | Price amount of the media object.                    | String     | 5.99
-| `<wurl:price>`           | currency            | [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)    | String     | USD
-
--
-
 #### Cue Points
 
 This item level tag is intended for signaling where mid-roll ads may be inserted in your video.
@@ -107,6 +95,20 @@ This item level tag is intended for specifying a watermark for the transcoded vi
 | `</wurl:watermark>`      | wurl:watermark end element.                                                                |            |
 
 -
+
+### Unldelivered `item` tags
+Undeliverd fields are fields on supported and stored via MRSS ingestion but currently are not delivered to video services. They are optional fields that can be included in the case that Wurl and video services support them in the future. Each of these elements are are part of the `<item>` section of feed:
+
+#### Price Info
+
+This tag is intended for including price information for VOD items.
+
+| Element                  | Attribute           | Description                                          | Data type  | Example
+|--------------------------|---------------------|------------------------------------------------------|------------|---------------------------------
+| `<wurl:price>`           | type                | 'rent', 'purchase' or 'subscription'.                | String     | rent
+| `<wurl:price>`           | amount              | Price amount of the media object.                    | String     | 5.99
+| `<wurl:price>`           | currency            | [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)    | String     | USD
+
 
 ### Series Example
 ```xml
@@ -174,7 +176,7 @@ This item level tag is intended for specifying a watermark for the transcoded vi
 </rss>
 ```
 
-### VOD Movie Example
+### Movie Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"
