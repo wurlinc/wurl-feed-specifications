@@ -1,11 +1,12 @@
 # MRSS feed format for Wurl Platform
 
-This page describes the MRSS format video producers is recommended to use in order to on-board their content to the Wurl Platform. We make use of standard RSS/MRSS tags, but in some cases Wurl defined tags will need to be used.
+This page describes the MRSS format video producers are recommended to use in order to on-board their content to the Wurl Platform. We make use of standard RSS/MRSS tags, but in some cases Wurl defined tags will need to be used.
 
 Wurl will transcode your videos to ensure playback on a variety of target platforms. Note that the format of your videos you provide in the feed need to conform to the [Mezzanine Specification](https://github.com/wurlinc/wurl-feed-specifications/blob/master/recommended-video-formats.md).
 
 When on-boarding episodic series data, it is recommended that you provide one feed per Series.
 If you publish multiple video series, provide multiple syndication feeds, one for each video series to be added to the Wurl Platform. If your series has multiple seasons we recommend one feed per season.
+
 
 * [Channel](#channel)
   * [title](#channel-title)
@@ -14,8 +15,6 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [link](#channel-link)
   * [pub-date](#channel-pubdate)
   * [series](#channel-series)
-  * [key](#channel-key)
-  * [content-episode](#channel-content-episode)
 * [Item](#items)
   * [title](#item-title)
   * [description](#item-description)
@@ -28,19 +27,18 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [tms](#item-tms)
   * [genres](#item-genres)
   * [iab](#item-iab)
-  * [credit](#item-credit)
-  * [copyright](#item-copyright)
   * [terms](#item-terms)
-  * [price](#item-price)
   * [closed captions](#item-cc)
   * [ratings](#item-ratings)
   * [episode](#item-episode)
   * [movie](#item-movie)
   * [wurl-tag](#item-tag)
   * [watermark](#item-watermark)
-  * [key](#item-key)
-  * [content-episode](#item-content-episode)
-* [Web Series MRSS Example](#series-example)
+* [Item Undelivered](#itemundelivered)
+  * [credit](#item-credit)
+  * [copyright](#item-copyright)
+  * [price](#item-price)
+* [ShortForm Video MRSS Example](#shortform-example)
 * [TV Series MRSS Example](#series-example)
 * [Movie MRSS Example](#movie-example)
 
@@ -48,23 +46,18 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
 Elements in `<channel>` section of your syndication feed:
 
 ### Title <a id="channel-title"></a>
-
 ```xml
 <title>Series Title</title>
 ```
-
 _Required_. Title of your video series. Recommended length 50 characters or less.
 
 ### Description <a id="channel-description"></a>
-
 ```xml
 <description>Series Description</description>
 ```
-
 _Required_. Brief description of your video series. Recommended length 200 characters or less.
 
 ### Image <a id="channel-image"></a>
-
 ```xml
 <image>
    <url>http://www.myvideosite.com/240X240_logo.png</url>
@@ -74,23 +67,18 @@ _Required_. Brief description of your video series. Recommended length 200 chara
 ```
 
 ### Link <a id="channel-link"></a>
-
 ```xml
 <link>http://www.myvideosite.com/vod</link>
 ```
-
 _Required_. URL of your website or app. (Required for feed validation, but not used by Wurl).
 
 ### PubDate <a id="channel-pubdate"></a>
-
 ```xml
 <pubDate>Thu, 10 Sep 2018 12:34:12 -0500</pubDate>
 ```
-
 _Required_. Date and time of last feed update in RFC-822 date-time format.
 
 ### Wurl Series <a id="channel-series"></a>
-
 ```xml
 <wurl:series>
   <wurl:officialTitle><![CDATA[Game of Thrones]]></wurl:officialTitle>
@@ -102,117 +90,75 @@ _Required_. Date and time of last feed update in RFC-822 date-time format.
   <wurl:studio>n/a</wurl:studio>
 </wurl:series>
 ```
-
 _Required if series feed_. Series tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
-### Key <a id="channel-key"></a>
-
-```xml
-<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
-<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
-```
-
-_Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
-The values provided at this level, will be propagated to all the item nodes.
-If you wish to override these "key" values for a particular item node just add the tags to the given node.
-
-### Create Content Episode <a id="channel-content-episode"></a>
-
-```xml
-<media:category scheme="urn:wurl:content_episode">true</media:category>
-```
-
-_Optional_. A boolean flag to indicate that this asset(s) should be automatically processed as a content episode.
-The values provided at this level, will be propagated to all the item nodes. If specified, the values that map to true are "true" and "yes"(lower case and/or uppercase), any other value will be mapped as false.
-If you wish to override these "content_episode" flag for a particular item node just add the tags to the given node.
-If multiple tags are provided only the first one will be considered.
 
 ## Item <a id="items"></a>
 Your syndication feed should contain multiple `<item>` groups, one for each video. Elements in `<item>` section of feed:
 
 ### Title <a id="item-title"></a>
-
 ```xml
 <title>A Title</title>
 <!-- or -->
 <media:title>A Title</media:title>
 ```
-
 _Required_. Title of the video. Recommended length 50 characters or less.
 
 ### Description <a id="item-description"></a>
-
 ```xml
 <description>A Description</description>
 <!-- or -->
 <media:description>A Description</media:description>
 ```
-
 _Required_. Brief description of your video. Recommended length 200 characters or less.
 
 ### PubDate <a id="item-pubdate"></a>
-
 ```xml
 <pubDate>Thu, 10 Sep 2018 12:34:12 -0500</pubDate>
 ```
-
 _Required_. Your video’s release date and time in RFC-822 date-time format.
 
 ### Thumbnail <a id="item-thumbnail"></a>
-
 ```xml
 <media:thumbnail height="720"url="http://www.myvideosite.com/thumbnails/123.jpg" width="1280"/>
 ```
-
 _Required_. URL of a thumbnail image to be associated with your video. The aspect ratio should be 16:9 and format .jpg, .png, or .svg.
 
 ### Content <a id="item-content"></a>
-
 ```xml
 <media:content url="http://myvideosite.com/videos/123.mp4" duration="5400"/>
 ```
-
 _Required_. The URL of a high-quality encoding of your MPEG4 video asset.
 
 ### Keywords <a id="item-keywords"></a>
-
 ```xml
 <media:keywords>keyword1, keyword2</media:keywords>
 ```
-
 _Required_. Highly relevant keywords describing the video. Recommended limit of 10 keywords or phrases. The keywords and phrases should be comma-delimited.
 
 ### Guid <a id="item-guid"></a>
-
 ```xml
 <guid isPermaLink="true">http://www.videos.com/item/987654</guid>
 ```
-
 _Required_. A string that uniquely identifies the item, typically a URL.
 
 ### External ID <a id="item-external-id"></a>
-
 ```xml
 <media:category scheme="urn:wurl:external:id">123456-1</media:category>
 ```
-
 _Optional_. An external video id used identify the video in a CMS.
 
 ### TMS <a id="item-tms"></a>
-
 ```xml
 <media:category scheme="urn:wurl:tms:series:id">SH1234</media:category>
 <media:category scheme="urn:wurl:tms:episode:id">EP1234</media:category>
 ```
-
 _Optional_. Assigns a TMS Series or Episode ID.
 
 ### Genres <a id="item-genres"></a>
-
 ```xml
 <media:category scheme="urn:wurl:genre">Cooking</media:category>
 ```
-
 _Optional_. Assigns a genre. Video Service specific genres can be added like this:
 
 ```xml
@@ -227,64 +173,31 @@ _Optional_. Assigns a genre. Video Service specific genres can be added like thi
 ```
 
 ### IAB Category <a id="item-iab"></a>
-
 ```xml
 <media:category scheme="urn:iab:categories" label="Video and Computer Games">IAB9-30</media:category>
 ```
-
 _Optional_. Specify a category for your video using the IAB Content Category taxonomy. The categories are documented in the [IAB’s OPENRTB API Specification Version 2.1](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf). See the "Web Series MRSS Example" below for a sample or learn more about this by reading the [specification](http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-1.pdf)
 
-### Credit <a id="item-credit"></a>
-
-```xml
-<media:credit role="actor">Peter Dinklage</media:credit>
-<media:credit role="director">Tim Van Patten</media:credit>
-<media:credit role="author">David Benioff</media:credit>
-```
-
-_Optional_. Notable entity that contributed to the creation of the media object. May include actors, producers, studios, etc. [More...](http://www.rssboard.org/media-rss#media-credit)
-
-### Copyright <a id="item-copyright"></a>
-```xml
-<media:copyright>Wurl 2018</media:copyright>
-```
-_Optional_. Copyright information for the video. [More...](http://www.rssboard.org/media-rss#media-copyright)
-
 ### Valid <a id="item-terms"></a>
-
 ```xml
 <dcterms:valid>start=Tue, 02 Dec 2014 00:00:00 -0600;end=Tue, 30 Jun 2015 00:00:00 -0500;scheme=W3C-DTF</dcterms:valid>
 ```
-
 _Optional_. Start and end date indicating the time period the video is available for viewing. See example below.
 
-### Price <a id="item-price"></a>
-
-```xml
-<wurl:price type="rent" amount="19.99" currency="USD"/>
-```
-
-_Optional_. Pricing information about a media object. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
-
 ### ClosedCaptions <a id="item-cc"></a>
-
 ```xml
 <wurl:closedCaptions type="SCC" lang="en-us" href="http://wurl.com/en-us.scc"/>
 ```
-
 _Optional_. Closed captions. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 ### Rating <a id="item-ratings"></a>
-
 ```xml
 <media:rating scheme="urn:mpaa">pg-13</media:rating>
 <media:rating scheme="urn:v-chip">tv-y7-fv</media:rating>
 ```
-
 _Optional_. This allows content ratings to be declared. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 ### Wurl Episode <a id="item-episode"></a>
-
 ```xml
 <wurl:episode>
   <wurl:officialTitle><![CDATA[Winter Is Coming]]></wurl:officialTitle>
@@ -293,18 +206,15 @@ _Optional_. This allows content ratings to be declared. [More...](https://github
   <wurl:firstAired>Sun, 17 Apr 2011 00:00:00 -0000</wurl:firstAired>
 </wurl:episode>
 ```
-
 _Required if series feed_. Episode tag containing additional episode meta data. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 ### Wurl Movie <a id="item-episode"></a>
-
 ```xml
 <wurl:movie>
   <wurl:officialTitle><![CDATA[Jingle All The Way 2]]></wurl:officialTitle>
   <wurl:year>2011</wurl:year>
 </wurl:movie>
 ```
-
 _Required if movie feed_. Movie tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
 ### Wurl Tag <a id="item-tag"></a>
@@ -314,7 +224,6 @@ _Required if movie feed_. Movie tag containing series info. [More...](https://gi
 <!-- or -->
 <media:category scheme="urn:wurl:tags">ad</media:category>
 ```
-
 _Optional_. This allows you to tag a video as being a promotional video or ad slate.
 
 ### Watermark <a id="item-watermark"></a>
@@ -332,26 +241,31 @@ _Optional_. This allows you to tag a video as being a promotional video or ad sl
 
 _Optional_. Tag to add a watermark into the transcode video. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
-### Key <a id="item-key"></a>
+## Item Undelivered <a id="itemundelivered"></a>
 
+Undeliverd fields are fields on supported and stored via MRSS ingestion but currently are not delivered to video services. They are optional fields that can be included in the case that Wurl and video services support them in the future. Each of these elements are are part of the `<item>` section of feed: 
+
+### Credit <a id="item-credit"></a>
 ```xml
-<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
-<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
+<media:credit role="actor">Peter Dinklage</media:credit>
+<media:credit role="director">Tim Van Patten</media:credit>
+<media:credit role="author">David Benioff</media:credit>
 ```
+_Optional_. Notable entity that contributed to the creation of the media object. May include actors, producers, studios, etc. [More...](http://www.rssboard.org/media-rss#media-credit)
 
-_Optional_. A look up reference to group and search episodes. Recommended length 50 characters or less.
-
-### Create Content Episode <a id="item-content-episode"></a>
-
+### Copyright <a id="item-copyright"></a>
 ```xml
-<media:category scheme="urn:wurl:content_episode">true</media:category>
+<media:copyright>Wurl 2018</media:copyright>
 ```
+_Optional_. Copyright information for the video. [More...](http://www.rssboard.org/media-rss#media-copyright)
 
-_Optional_. A boolean flag to indicate that this asset should be automatically processed as a content episode.
-If specified, the values that map to true are "true" and "yes"(lower case and/or uppercase), any other value will be mapped as false.
-If multiple tags are provided only the first one will be considered.
+### Price <a id="item-price"></a>
+```xml
+<wurl:price type="rent" amount="19.99" currency="USD"/>
+```
+_Optional_. Pricing information about a media object. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
-## Web Series MRSS Example:
+## ShortForm Video MRSS Example: <a id="shortform-example"></a>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -541,3 +455,4 @@ If multiple tags are provided only the first one will be considered.
 </rss>
 
 ```
+
