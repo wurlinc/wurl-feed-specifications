@@ -24,6 +24,7 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [keywords](#item-keywords)
   * [guid](#item-guid)
   * [external-id](#item-external-id)
+  * [alt-external-id](#item-alt-external-id)
   * [tms](#item-tms)
   * [genres](#item-genres)
   * [iab](#item-iab)
@@ -148,6 +149,12 @@ _Required_. A string that uniquely identifies the item, typically a URL.
 ```
 _Optional_. An external video id used identify the video in a CMS.
 
+### Alternate External ID <a id="item-alt-external-id"></a>
+```xml
+<media:category scheme="urn:wurl:alt_external:id">789-2</media:category>
+```
+_Optional_. An alternate external video id used identify the video in a CMS.
+
 ### TMS <a id="item-tms"></a>
 ```xml
 <media:category scheme="urn:wurl:tms:series:id">SH1234</media:category>
@@ -243,7 +250,7 @@ _Optional_. Tag to add a watermark into the transcode video. [More...](https://g
 
 ## Item Undelivered <a id="itemundelivered"></a>
 
-Undeliverd fields are fields on supported and stored via MRSS ingestion but currently are not delivered to video services. They are optional fields that can be included in the case that Wurl and video services support them in the future. Each of these elements are are part of the `<item>` section of feed: 
+Undeliverd fields are fields on supported and stored via MRSS ingestion but currently are not delivered to video services. They are optional fields that can be included in the case that Wurl and video services support them in the future. Each of these elements are are part of the `<item>` section of feed:
 
 ### Credit <a id="item-credit"></a>
 ```xml
