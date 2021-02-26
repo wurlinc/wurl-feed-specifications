@@ -153,7 +153,7 @@ _Optional_. An external video id used identify the video in a CMS.
 ```xml
 <media:category scheme="urn:wurl:episode_external:id">789-2</media:category>
 ```
-_Optional_. An external id used identify the target Wurl episode.
+_Optional_. An external id used to identify the target Wurl episode.
 
 ### TMS <a id="item-tms"></a>
 ```xml
