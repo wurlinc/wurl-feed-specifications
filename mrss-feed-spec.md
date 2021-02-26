@@ -24,7 +24,7 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [keywords](#item-keywords)
   * [guid](#item-guid)
   * [external-id](#item-external-id)
-  * [alt-external-id](#item-alt-external-id)
+  * [episode-external-id](#item-episode-external-id)
   * [tms](#item-tms)
   * [genres](#item-genres)
   * [iab](#item-iab)
@@ -149,11 +149,11 @@ _Required_. A string that uniquely identifies the item, typically a URL.
 ```
 _Optional_. An external video id used identify the video in a CMS.
 
-### Alternate External ID <a id="item-alt-external-id"></a>
+### Episode External ID <a id="item-episode-external-id"></a>
 ```xml
-<media:category scheme="urn:wurl:alt_external:id">789-2</media:category>
+<media:category scheme="urn:wurl:episode_external:id">789-2</media:category>
 ```
-_Optional_. An alternate external video id used identify the video in a CMS.
+_Optional_. An external id used identify the target Wurl episode.
 
 ### TMS <a id="item-tms"></a>
 ```xml
