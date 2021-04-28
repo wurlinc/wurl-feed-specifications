@@ -8,7 +8,7 @@
         "key": { "$ref": "#/definitions/string_255_not_null" },
         "title": { "$ref": "#/definitions/string_255_not_null" },
         "short_description": { "$ref": "#/definitions/string_255" },
-        "description": { "$ref": "#/definitions/string_255" },
+        "description": {"type": "string"},
         "content_type": {
           "type": "string",
           "enum": ["episode", "movie", "shortFormVideo", "tvSpecial"]
@@ -61,7 +61,7 @@
           "properties": {
             "title": { "$ref": "#/definitions/string_255_not_null" },
             "release_date": { "$ref": "#/definitions/release_date" },
-            "description": { "$ref": "#/definitions/string_255" },
+            "description": {"type": "string"},
             "studio": { "$ref": "#/definitions/string_255" },
             "thumbnails": {
               "type": "array",
@@ -83,7 +83,7 @@
           "required": ["release_date", "description", "thumbnails", "season"]
         }
       },
-      "required": ["key", "title", "content_type", "thumbnails", "genres", "ratings", "credits"]
+      "required": ["key", "title", "content_type", "thumbnails"]
     },
     "event": {
       "type": "object",
@@ -147,7 +147,7 @@
     },
     "url": {
       "type": "string",
-      "pattern": "^([a-z0-9+.-]+):(?://(?:((?:[a-z0-9-._~!$&'()*+,;=:]|%[0-9A-F]{2})*)@)?((?:[a-z0-9-._~!$&'()*+,;=]|%[0-9A-F]{2})*)(?::(\\d*))?(/(?:[a-z0-9-._~!$&'()*+,;=:@/]|%[0-9A-F]{2})*)?|(/?(?:[a-z0-9-._~!$&'()*+,;=:@]|%[0-9A-F]{2})+(?:[a-z0-9-._~!$&'()*+,;=:@/]|%[0-9A-F]{2})*)?)(?:\\?((?:[a-z0-9-._~!$&'()*+,;=:/?@]|%[0-9A-F]{2})*))?(?:#((?:[a-z0-9-._~!$&'()*+,;=:/?@]|%[0-9A-F]{2})*))?$"
+      "pattern": "https?:\/\/[\\S]+"
     },
     "release_date": {
       "type": "string", "format": "date"
