@@ -77,10 +77,10 @@
                 "episode_number": {"type": "integer"},
                 "release_date": { "$ref": "#/definitions/release_date" }
               },
-              "required": ["number", "episode_number", "release_date"]
+              "required": ["number", "episode_number"]
             }
           },
-          "required": ["release_date", "description", "thumbnails", "season"]
+          "required": ["description", "thumbnails", "season"]
         }
       },
       "required": ["key", "title", "content_type", "thumbnails"]
