@@ -15,6 +15,7 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [link](#channel-link)
   * [pub-date](#channel-pubdate)
   * [series](#channel-series)
+  * [wurl-key](#channel-key)
 * [Item](#items)
   * [title](#item-title)
   * [description](#item-description)
@@ -33,7 +34,10 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [ratings](#item-ratings)
   * [episode](#item-episode)
   * [movie](#item-movie)
+  * [content-type](#item-content-type)
   * [wurl-tag](#item-tag)
+  * [wurl-key](#item-key)
+  * [wurl-search-tag](#item-search-tag)
   * [watermark](#item-watermark)
 * [Item Undelivered](#itemundelivered)
   * [credit](#item-credit)
@@ -92,6 +96,14 @@ _Required_. Date and time of last feed update in RFC-822 date-time format.
 </wurl:series>
 ```
 _Required if series feed_. Series tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
+
+### Wurl Key <a id="channel-key"></a>
+
+```xml
+<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
+```
+_Optional_. Optional. A reference to group and search episodes. Recommended length: 50 characters or less. The values provided at this level will be propagated to all the item nodes. If you wish to override these "key" values for a particular item node, just add the tags to that node.
 
 
 ## Item <a id="items"></a>
@@ -215,15 +227,23 @@ _Optional_. This allows content ratings to be declared. [More...](https://github
 ```
 _Required if series feed_. Episode tag containing additional episode meta data. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
-### Wurl Movie <a id="item-episode"></a>
+### Wurl Movie <a id="item-movie"></a>
 ```xml
 <wurl:movie>
   <wurl:officialTitle><![CDATA[Jingle All The Way 2]]></wurl:officialTitle>
   <wurl:year>2011</wurl:year>
+  <wurl:firstAired>Tue, 01 Jan 2011 00:00:00 -0000</wurl:firstAired>
 </wurl:movie>
 ```
 _Required if movie feed_. Movie tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
 
+### Wurl Content Type <a id="item-content-type"></a>
+```xml
+<media:category scheme="urn:wurl:content_type">tvSpecial</media:category>
+<!-- or -->
+<media:category scheme="urn:wurl:content_type">shortFormVideo</media:category>
+```
+_Optional_. If you are not sending neither a movie nor an episode you can specify if the content should be consider either a TV Special or a Short Form Video.
 ### Wurl Tag <a id="item-tag"></a>
 
 ```xml
@@ -232,6 +252,24 @@ _Required if movie feed_. Movie tag containing series info. [More...](https://gi
 <media:category scheme="urn:wurl:tags">ad</media:category>
 ```
 _Optional_. This allows you to tag a video as being a promotional video or ad slate.
+### Wurl Key <a id="item-key"></a>
+
+```xml
+<media:category scheme="urn:wurl:channel:key">channel searchable key</media:category>
+<media:category scheme="urn:wurl:channel:key">one more reference</media:category>
+```
+
+_Optional_. A reference to group and search episodes. Recommended length: 50 characters or less.
+
+### Wurl Search Tags <a id="item-search-tag"></a>
+
+```xml
+<media:category scheme="urn:searchTag">Movie</media:category>
+<media:category scheme="urn:searchTag">Action</media:category>
+<media:category scheme="urn:searchTag">DayTime</media:category>
+```
+
+_Optional_. A tag specifically used to create auto-scheduling blocks. Please include each tag within its own line, as shown above.
 
 ### Watermark <a id="item-watermark"></a>
 
@@ -315,6 +353,7 @@ _Optional_. Pricing information about a media object. [More...](https://github.c
       <media:rating scheme="urn:v-chip">tv-y7-fv</media:rating>
       <wurl:closedCaptions type="SCC" lang="en-us" href="http://videos.com/en-us.scc"/>
       <wurl:closedCaptions type="SRT" lang="en-us" href="http://videos.com/en-us.srt"/>
+      <media:category scheme="urn:wurl:content_type">shortFormVideo</media:category>
     </item>
     <item>
       <guid>http://mysite.com/videos/123.mp4</guid>
@@ -339,6 +378,7 @@ _Optional_. Pricing information about a media object. [More...](https://github.c
         <wurl:width>12%</wurl:width>
         <wurl:height>10%</wurl:height>
       </wurl:watermark>
+      <media:category scheme="urn:wurl:content_type">shortFormVideo</media:category>
     </item>
   </channel>
 </rss>
