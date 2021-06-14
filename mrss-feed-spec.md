@@ -35,6 +35,9 @@ If you publish multiple video series, provide multiple syndication feeds, one fo
   * [episode](#item-episode)
   * [movie](#item-movie)
   * [content-type](#item-content-type)
+  * [internal-title](#item-internal-title)
+  * [description-110](#item-description-110)
+  * [target-duration](#item-target-duration)
   * [wurl-tag](#item-tag)
   * [wurl-key](#item-key)
   * [wurl-search-tag](#item-search-tag)
@@ -93,6 +96,7 @@ _Required_. Date and time of last feed update in RFC-822 date-time format.
      <wurl:seasonTitle>Some title</wurl:seasonTitle>
   </wurl:season>
   <wurl:studio>n/a</wurl:studio>
+  <wurl:thumbnail>http://www.myvideosite.com/thumbnails/123.jpg</wurl:thumbnail>
 </wurl:series>
 ```
 _Required if series feed_. Series tag containing series info. [More...](https://github.com/wurlinc/wurl-feed-specifications/blob/master/wurl-mrss-namespace.md)
@@ -244,6 +248,25 @@ _Required if movie feed_. Movie tag containing series info. [More...](https://gi
 <media:category scheme="urn:wurl:content_type">shortFormVideo</media:category>
 ```
 _Optional_. If you are not sending neither a movie nor an episode you can specify if the content should be consider either a TV Special or a Short Form Video.
+
+### Wurl Internal Title<a id="item-internal-title"></a>
+```xml
+<media:category scheme="urn:wurl:internal_title">String Value</media:category>
+```
+_Optional_. Title for internal reference.
+
+### Wurl Desciption 110<a id="item-description-110"></a>
+```xml
+<media:category scheme="urn:wurl:description_110">Description up to 110 character</media:category>
+```
+_Optional_. A description field up to 100 characters.
+
+### Wurl Target Duration<a id="item-target-duration"></a>
+```xml
+<media:category scheme="urn:wurl:target_duration">3600</media:category>
+```
+_Optional_. Target duration in milliseconds.
+
 ### Wurl Tag <a id="item-tag"></a>
 
 ```xml
