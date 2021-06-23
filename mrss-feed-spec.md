@@ -255,11 +255,11 @@ _Optional_. If you are not sending neither a movie nor an episode you can specif
 ```
 _Optional_. Title for internal reference.
 
-### Wurl Desciption 110<a id="item-description-110"></a>
+### Wurl Description 110<a id="item-description-110"></a>
 ```xml
 <media:category scheme="urn:wurl:description_110">Description up to 110 character</media:category>
 ```
-_Optional_. A description field up to 100 characters.
+_Optional_. A description field up to 110 characters.
 
 ### Wurl Target Duration<a id="item-target-duration"></a>
 ```xml
