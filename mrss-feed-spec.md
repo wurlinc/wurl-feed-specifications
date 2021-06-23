@@ -175,6 +175,7 @@ _Optional_. An external id used to identify the target Wurl episode.
 ```xml
 <media:category scheme="urn:wurl:tms:series:id">SH1234</media:category>
 <media:category scheme="urn:wurl:tms:episode:id">EP1234</media:category>
+<media:category scheme="urn:wurl:tms:movie:id">MV1234</media:category>
 ```
 _Optional_. Assigns a TMS Series or Episode ID.
 
